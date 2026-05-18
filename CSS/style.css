@@ -1,0 +1,74 @@
+body {
+    background-color: rgb(218, 227, 235);
+}
+
+main {
+    border: solid 2px purple;
+    border-radius: 2vh;
+    margin-top: 15vh;
+
+}
+
+.groen {
+    color: rgba(39, 83, 74);
+}
+
+.paars {
+    color: purple;
+}
+
+.donkergroen {
+    color: rgba(23, 49, 44);
+}
+
+.roze {
+    color: rgba(207, 171, 204);
+}
+
+.FAQmessage {
+    display: flex;
+    flex-direction: column;
+    height: 350px;
+    width: 700px;
+    float: right;
+    position: relative;
+    
+}
+
+.FAQ-container {
+    float:left;
+    position:relative;
+    width: 0px;
+    gap: 10px;
+    padding-top: 20px;
+}
+
+#LeftContainer > input {
+    left: 50px;
+    height: 20px;
+    width: 160px;
+}
+
+#LeftContainer > button {
+    width: 100px;
+}
+
+#MiddleContainer > input {
+    width: 200px;
+}
+
+#RightContainer > input {
+    height: 400px;
+    width: 700px;
+}
+
+a.button {
+    height: 30px;
+    width: 130px;
+    padding: 1px 6px;
+    border: 1px outset buttonborder;
+    border-radius: 3px;
+    color: buttontext;
+    background-color: buttonface;
+    text-decoration: none;
+}

@@ -1,0 +1,121 @@
+/* Main header layout */
+
+header{
+    max-width: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 5vw;
+  background-color: rgba(80, 80, 80, 0.137);
+  backdrop-filter: blur(4px);
+    border-bottom: solid 2px purple;
+    z-index: 10;
+
+}
+
+.flex-container {
+    margin-right: 20%;
+    /* margin-left: 0%; */
+}
+
+.flex-container a {
+    background-color: white;
+    padding: 2vh;
+    border-radius: 3vh;
+    border: solid 2px purple;
+    margin: 1vh;
+    position: relative;
+    left: 0;
+    top: 4vh;
+    flex-direction: row;
+   
+}
+
+.flex-container a:hover {
+    background-color: #3e8e41;
+    font-size: 20;
+}
+
+/* Colours of button text when/after hover/clicking */
+
+.headerbutton { text-decoration: none; color:#000; }
+.headerbutton:visited { text-decoration: none; color:rgba(39, 83, 74); }
+.headerbutton:hover { text-decoration: none; color: purple; }
+.headerbutton:focus { text-decoration: none; color:#000; }
+.headerbutton:hover {text-decoration: none; color: rgb(67, 0, 67); }
+.headerbutton:active { text-decoration: none; color:purple; }
+
+
+
+
+/* mobile friendly / resizing */
+@media (max-width: 600px) {
+  .flex-container {
+    flex-direction: column;
+  }
+}
+
+#logo {
+    position: relative;
+    float: left;
+    scale: 90%;
+}
+
+
+/* Dropdown menu settings */
+
+.dropbtn {
+  background-color: white;
+  border: solid 2px purple;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 3vh;
+  text-decoration: none;
+
+}
+
+.dropdown {
+  position: relative;
+  float: right;
+  border-radius: 3vh;
+  top: -1vh;
+  border: solid 2px purple;
+  right: 10px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 200px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  border-radius: 2vh;
+  right: 0px;
+  border: solid 2px purple;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #8d0000;
+  border-radius: 1vh;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+}
+
+
+
