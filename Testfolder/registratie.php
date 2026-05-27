@@ -103,9 +103,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <input type="text" id="address" name="address" placeholder="Adres" required>
             <input type="text" id="zipcode" name="zipcode" placeholder="Postcode" required>
             <input type="text" id="city" name="city" placeholder="Stad" required>
-
         </div>
-        
         <div id="RightContainer" style="display: flex; flex-direction: column: gap: 5px; width: 60%; height: 100%;">
                 <a href="inloggen.php" class="button">Ga naar inloggen</a>
         </div>

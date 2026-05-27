@@ -3,7 +3,7 @@
 // PDO DATABASE CONNECTIE (standaard)
 // ===================================
 $host = 'localhost';
-$dbname = 'db_c09';
+$dbname = 'db_c10';
 $username = 'root';
 $password = 'root';
 
