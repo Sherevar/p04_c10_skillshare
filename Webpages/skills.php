@@ -57,13 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <div id="PaddingContainer" style="display: flex; flex-direction: justify-content: center; align-items: center; column; gap: 5px; width: 60px; height: 100%;"> </div>
             <div id="LeftContainer" style="display: flex; flex-direction: column; gap: 5px; width: 25%; height: 100%;">
             <input type="text" id="skill" name="skill" placeholder="Naam, max 50 tekens" required>
-                <textarea id="description" name="description" placeholder="Beschrijving, max 60.000 tekens" style="width: 300px; height: 200px;" required></textarea>
-            
-    <?php if (!empty($melding)) : ?>
-        <div style="margin:20px; padding:10px; background:#eef; border:1px solid #99c;">
-            <?php echo htmlspecialchars($melding); ?>
-        </div>
-    <?php endif; ?>
+            <input type="text" id="description" name="description" placeholder="Beschrijving, max 60.000 tekens" style="width: 300px; height: 500px;" required>
             <button type="submit" style="margin: 20px;" id="VerzendBtn">Verzenden</button>
             </div>
             <H1> Edit deze pagina </H1>
@@ -75,7 +69,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         </div>
         </div>
-    </div>
     </div>
 </div>
 

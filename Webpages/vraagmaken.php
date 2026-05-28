@@ -68,7 +68,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             <button type="submit" style="margin: 20px;" id="VerzendBtn">Verzenden</button>
             </div>
-        <!-- <div id="MiddleContainer"  style="display: flex; flex-direction: column; gap: 5px; width: 38%; height: 100%;">         
+        <div id="MiddleContainer"  style="display: flex; flex-direction: column; gap: 5px; width: 38%; height: 100%;">         
                 <input type="text" id="answer1" name="answer1" placeholder="Antwoord 1" style="width: 500px; height: 500px;" required>
                 <input type="text" id="answer2" name="answer2" placeholder="Antwoord 2" style="width: 500px; height: 500px;" required>
 
@@ -77,14 +77,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <input type="text" id="answer3" name="answer3" placeholder="Antwoord 3" style="width: 500px; height: 500px;" required>
                 <input type="text" id="answer4" name="answer4" placeholder="Antwoord 4" style="width: 500px; height: 500px;" required>
         </div>
-        </div> -->
+        </div>
     </div>
 </div>
 
 
 
 
-
+<!-- 
 <?php
 
     $sql2 = "SELECT * FROM tb_skills";
@@ -114,13 +114,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
 
-
-
-
-
-
-
-?>
+?> -->
 
     <form method="POST">
         <label> Skill categorie:>/label>
@@ -144,10 +138,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <input type="submit" value="submit" name="submit">
     </form>
     <br>
-
-
-
-
 
 
 
