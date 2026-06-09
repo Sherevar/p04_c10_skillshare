@@ -15,8 +15,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     // 1) Lees de input uit het formulier
     // trim() haalt spaties weg aan begin/eind
-    $username = trim($_POST["email"] ?? "");
-    $password = trim($_POST["password"] ?? "");
+    $username = trim($_POST["username"] ?? "");
+    $password = trim($_POST["user_password"] ?? "");
 
     // 2) Basis validatie (is er iets ingevuld?)
     if ($username === "" || $password === "") {
@@ -25,30 +25,25 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
         // 3) Haal de gebruiker op uit de database met een prepared statement
         // Zo voorkom je SQL-injectie.
-        $stmt = $pdo->prepare("SELECT id, email, user_password, permission_role FROM tb_users WHERE email = :email LIMIT 1");
-        $stmt->execute([":email" => $username]);
+        $stmt = $pdo->prepare("SELECT id, email, user_password FROM tb_users WHERE username = :username LIMIT 1");
+        $stmt->execute([":username" => $username]);
 
-        $user = $stmt->fetch(); // false als niets gevonden
-		
-		// HOTFIX als wachtwoord niet klopt... dumpt Array!
-		var_dump($_SESSION);
-		// exit;
+        $user = $stmt->fetch(); // false if not found
 
-        
-        // 4) Controleer:
-        // - bestaat de user?
-        // - klopt het wachtwoord met password_verify?
+        // Optional debug when ?debug=1 is present
+        if (isset($_GET['debug']) && $_GET['debug'] === '1') {
+            echo '<pre>'; var_dump($user); echo '</pre>';
+        }
+
+        // 4) Check user exists and password matches
         if ($user && password_verify($password, $user["user_password"])) {
 
             // 5) Login is gelukt -> zet sessievariabelen
             $_SESSION["logged_in"] = true;
-            $_SESSION["user_id"] = $user["id"];
+            $_SESSION["user_id"] = $user["id"];                 // use for friendlist updates
             $_SESSION["email"] = $user["email"];
-            $_SESSION["permission_role"] = $user["permission_role"];
-            // IS THIS CORRECT OR NOT?!
 
-            var_dump($_SESSION);
-            // 6) Doorsturen naar dashboard
+            // Redirect to dashboard
             header("Location: index.php");
             exit;
 
@@ -78,10 +73,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     <form method="POST" action="inloggen.php">
       <label for="email">Gebruikersnaam</label>
-      <input id="email" name="email" type="text" placeholder="bijv. admin" required>
+      <input id="email" name="username" type="text" placeholder="bijv. admin" required>
 
       <label for="password">Wachtwoord</label>
-      <input id="password" name="password" type="password" placeholder="bijv. admin" required>
+      <input id="password" name="user_password" type="password" placeholder="bijv. admin" required>
 
       <button type="submit">Inloggen</button>
     </form>
