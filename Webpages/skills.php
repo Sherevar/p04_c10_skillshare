@@ -51,7 +51,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <h2 style="left: 30px; margin-left: 80px;"> Skill toevoegen </h2>
 <div class ="form-container">
 <form method="POST" action="skills.php">
-    <!-- CHECK DIT NOG LATER -->
+    <!-- SKILL FIELD: Insert new skills and descriptions here. -->
+<!-- Could use an already existing skill list or be able to edit certain items (new page?) -->
+
 
     <div id="MainContainer" style="display: flex; height: 500px; width: 100vw;">
         <div id="PaddingContainer" style="display: flex; flex-direction: justify-content: center; align-items: center; column; gap: 5px; width: 60px; height: 100%;"> </div>

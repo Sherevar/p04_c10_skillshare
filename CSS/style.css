@@ -72,3 +72,11 @@ a.button {
     background-color: buttonface;
     text-decoration: none;
 }
+
+textarea {
+	resize: none;
+}
+
+#skill-select {
+    width: 200px;
+}

@@ -6,6 +6,8 @@ require_once "../Includes/db.php";
         $stmt->execute();
         $skillArray = $stmt->fetchAll(PDO::FETCH_ASSOC); // alle rijen ophalen
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
