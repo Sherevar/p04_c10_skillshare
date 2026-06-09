@@ -23,12 +23,15 @@ p {
 body {
     background-color: var(--backround_color_main);
     
+    background-color: var(--backround_color_main);
+    
 }
 
 main {
     border: solid 2px purple;
     border-radius: 2vh;
     margin-top: 15vh;
+    font-size: large;
     font-size: large;
 }
 
@@ -148,3 +151,4 @@ a.button {
     width: 250px;
     height: 100px;
 }
+

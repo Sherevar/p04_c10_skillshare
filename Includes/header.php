@@ -1,11 +1,10 @@
 <header>
     <nav class="backgroundblur">
-            <a id="logo" href="../Webpages/index.php"><img id="mainLogo" src="../Media/SkillSphereLogo.png" alt="Spik en Span logo"></a>
+            <a class="text_logo">CodeCrunchers</a>
         <div class="flex-container">
             <a href="../Webpages/index.php" class="headerbutton">HOME</a>
-            <a href="../Webpages/skills.php" class="headerbutton">SKILLS</a>
-            <a href="../Webpages/vraagmaken.php" class="headerbutton">ADD QUESTIONS</a>
-    
+            <a href="../Webpages/vraagmaken.php" class="headerbutton">VRAAGMAKEN</a>
+            <a href="../Webpages/skills.php" class="headerbutton">USERSKILLS</a>
         </div>
 
         <div class="dropdown">
