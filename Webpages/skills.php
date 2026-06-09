@@ -59,7 +59,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <div id="PaddingContainer" style="display: flex; flex-direction: justify-content: center; align-items: center; column; gap: 5px; width: 60px; height: 100%;"> </div>
             <div id="LeftContainer" style="display: flex; flex-direction: column; gap: 5px; width: 25%; height: 100%;">
             <input type="text" id="skill" name="skill" placeholder="Naam, max 50 tekens" required>
-            <input type="text" id="description" name="description" placeholder="Beschrijving, max 60.000 tekens" style="width: 300px; height: 500px;" required>
+            <textarea type="text" id="description" name="description" placeholder="Beschrijving, max 60.000 tekens" style="width: 300px; height: 500px;" required></textarea>
             <button type="submit" style="margin: 20px;" id="VerzendBtn">Verzenden</button>
             </div>
             <H1> Edit deze pagina </H1>

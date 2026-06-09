@@ -7,46 +7,105 @@
         $skillArray = $stmt->fetchAll(PDO::FETCH_ASSOC); // alle rijen ophalen
 
 
+// Retrieves the correct skill_id from the select menu and turns it into an integer able to be used.
+// Several checks regarding the value and data type of the information sent through the post.
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $loop_id_string = $_POST['skills'];
+    // echo "Skill id: " . $loop_id . "\n";
+    // echo gettype($loop_id);
+    $loop_nr = intval($loop_id_string);
+    // echo gettype($loop_nr);
+}
 
-// if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-//     $skill = $_POST['skill'] ?? '';
-//     $description = $_POST['description'] ?? '';
+// echo $answer_true;
 
+// Conditional debug output: append ?debug=1 to the URL to inspect GET/POST
+if (isset($_GET['debug']) && $_GET['debug'] == '1') {
+    echo '<pre style="background:#f6f8fa;padding:10px;border:1px solid #ddd;">';
+    echo "GET:\n";
+    var_dump($_GET);
+    echo "\nPOST:\n";
+    var_dump($_POST);
+    echo "\nSERVER:\n";
+    // limit noisy output when not needed
+    $server_subset = array_intersect_key($_SERVER, array_flip(['REQUEST_METHOD','REQUEST_URI','HTTP_HOST','REMOTE_ADDR']));
+    var_dump($server_subset);
+    echo "\nDerived variables:\n";
+    echo 'loop_id: ';
+    var_dump($loop_id ?? null);
+    echo 'answer_true: ';
+    var_dump($_POST['answer_true'] ?? null);
+    echo '</pre>';
+}
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $question = $_POST['vraag'] ?? '';
+    $skills_id = $loop_nr;
+    // 2 items for tb_questions.
+    // Could expand with allowing a "points to be earned" function, maybe later
+
+    $answer1 = $_POST['answer1'] ?? '';
+    $answer2 = $_POST['answer2'] ?? '';
+    $answer3 = $_POST['answer3'] ?? '';
+    $answer4 = $_POST['answer4'] ?? '';
+    $answer_true = $_POST['answer_true'] ?? '';
+    // echo $answer_true;
+    // Checks if the true answer value is given correctly.
+
+
+    if ($skills_id && $question
+      && $answer1 && $answer2 && $answer3 && $answer4 && $answer_true) {
+
+
+    try {
+        $pdo->beginTransaction();       // zorgt ervoor dat alle queries volledig moeten ingevuld zijn
+
+        $sql = "
+            INSERT INTO tb_questions (skills_id, question)
+            VALUES (:skills_id, :question)
+        ";
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute([
+            ':skills_id' => $skills_id,
+            ':question' => $question,
+        ]);
+
+        // Haalt de variabele van de users.id op en zet deze in $userId, eerst een string, dan veranderen in een integer.
+        $question_id = $pdo->lastInsertId();
+        $question_id = intval($question_id);
+        // echo gettype($userId);       Checks type
+        // echo $userId;                Checks value
+     
+     
+        $sql2 = "
+            INSERT INTO tb_answers (question_id, answer1, answer2, answer3, answer4, answer_true)
+            VALUES (:question_id, :answer1, :answer2, :answer3, :answer4, :answer_true)
+        ";
+
+        //  var_dump($firstname);
+        $stmt2 = $pdo->prepare($sql2);
+        $stmt2->execute([
+            ':question_id' => $question_id,
+            ':answer1' => $answer1,
+            ':answer2' => $answer2,
+            ':answer3' => $answer3,
+            ':answer4' => $answer4,
+            ':answer_true' => $answer_true,
+
+        ]);
     
-//     echo "<br><br>";
-//     if ($skill && $description) {
-//         echo "test try catch.";
-// // MAKE THIS INTO PROPER QUESTION FORM, RADIO BUTTON ANSWER INCLUDED
-// // EDIT THIS FOR QUESTIONS TO BE CORRECTLY CREATED IN DATABASE
-//     try {
-//         $sql = "
-//             INSERT INTO tb_questions (skill, description)
-//             VALUES (:skill, :description)
-//         ";
-//         $stmt = $pdo->prepare($sql);
-//         $stmt->execute([
-//             ':skill' => $skill,
-//             ':description' => $description,
-//         ]);
+        $pdo->commit();
+        $melding = "Een nieuwe vraag is gemaakt!";
+    } catch(Exception $e) {
+        $pdo->RollBack();
+        $melding = "Vraag registratie mislukt: " . $e->getMessage();
+    }
+}
+}
 
-//         $melding = "Een nieuwe vraag is toegevoegd.";
-//     } catch(Exception $e) {
-//         $melding = "Toevoeging mislukt: " . $e->getMessage();
-//     }
-// }
-// }
-
-// ^ ALL OF THIS REQURIES EDITING STILL
-// ^ ALL OF THIS REQURIES EDITING STILL
-// ^ ALL OF THIS REQURIES EDITING STILL
-// ^ ALL OF THIS REQURIES EDITING STILL
-// ^ ALL OF THIS REQURIES EDITING STILL
-// ^ ALL OF THIS REQURIES EDITING STILL
 // ^ ALL OF THIS REQURIES EDITING STILL
 
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -73,6 +132,8 @@
 
             <textarea type="text" id="vraag" name="vraag" placeholder="Beschrijf de vraag" style="align-items: flex-start; width: 300px; height: 500px;" required></textarea>
            <br>
+
+
             <!--  Loop which gives a dropdown menu of already created skills. -->
            <label for="skillSelect">Kies een skill:</label>
     <select name="skills" id="skill-select">
@@ -83,16 +144,14 @@
         <?php endforeach; ?>
     </select>
 
-        <!-- Radio menu for answer selection -->
-
           <p>Welk antwoord is correct?</p>
-            <input type="radio" id="answer1" name="answer" value="answer1">
+            <input type="radio" id="answer1" name="answer_true" value="answer1">
             <label for="answer1">Antwoord 1</label>
-            <input type="radio" id="answer2" name="answer" value="answer2">
+            <input type="radio" id="answer2" name="answer_true" value="answer2">
             <label for="answer2">Antwoord 2</label>
-            <input type="radio" id="answer3" name="answer" value="answer3">
+            <input type="radio" id="answer3" name="answer_true" value="answer3">
             <label for="answer3">Antwoord 3</label>
-            <input type="radio" id="answer4" name="answer" value="answer4">
+            <input type="radio" id="answer4" name="answer_true" value="answer4">
             <label for="answer4">Antwoord 4</label>
 
             <button type="submit" style="margin: 20px;" id="VerzendBtn">Verzenden</button>
@@ -118,7 +177,7 @@
 // echo var_dump($_POST);
 echo "\n";
 echo "\n";
-print_r ($skillArray);
+// print_r ($skillArray);
 echo "\n";
 echo "\n";
 // echo $skill_id = intval($skillArray);
@@ -128,80 +187,6 @@ echo "\n";
 ?>
 </body>
 
-
-
-
-
-
-
-
-
-<!-- 
 <?php
 
-
-// if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-//     $question = $_POST['vraag'] ?? '';
-//     $skills_id = $_POST[$skillCounter['id']] ?? '';
-//             // ASK IF THIS IS CORRECT
-
-
-//     $question = $_post['vraag']
-//     $answer1 = $_POST['answer1'] ?? '';
-//     $answer2 = $_POST['answer2'] ?? '';
-//     $answer3 = $_POST['answer3'] ?? '';
-//     $answer4 = $_POST['answer4'] ?? '';
-//     $answer_true = $_POST['answer_true'] ?? '';
-
-
-//     $hash = password_hash($password, PASSWORD_DEFAULT);
-//     echo "<br>";
-//     if ($skills_id 
-//      && $question
-//       && $answer1 && $answer2 && $answer3 && $answer4 && $answer_true) {
-
-
-//     try {
-//         $pdo->beginTransaction();       // zorgt ervoor dat alle queries volledig moeten ingevuld zijn
-
-//         $sql = "
-//             INSERT INTO tb_questions (skills_id, question)
-//             VALUES (:email, :password)
-//         ";
-//         $stmt = $pdo->prepare($sql);
-//         $stmt->execute([
-//             ':skills_id' => $skills_id,
-//             ':question' => $question,
-//         ]);
-
-//         // Haalt de variabele van de users.id op en zet deze in $userId, eerst een string, dan veranderen in een integer.
-//         $question_id = $pdo->lastInsertId();
-//         $question_id = intval($question_id);
-//         // echo gettype($userId);       Checks type
-//         // echo $userId;                Checks value
-     
-     
-//         $sql2 = "
-//             INSERT INTO tb_answers (question_id, answer1, answer2, answer3, answer4, answer_true)
-//             VALUES (:question_id, :answer1, :answer2, :answer3, :answer4, :answer_true)
-//         ";
-
-//         //  var_dump($firstname);
-//         $stmt2 = $pdo->prepare($sql2);
-//         $stmt2->execute([
-//             ':user_id' => $userId,
-//             ':firstname' => $firstname,
-
-//         ]);
-    
-//         $pdo->commit();
-//         $melding = "U hebt een account aangemaakt!";
-//     } catch(Exception $e) {
-//         $pdo->RollBack();
-//         $melding = "Registratie mislukt: " . $e->getMessage();
-//     }
-// }
-// }
-
-
-?> -->
+?>
