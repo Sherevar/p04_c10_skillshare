@@ -1,12 +1,35 @@
+/* variables */
+:root {
+    --backround_color_main: #5170ff;
+    --HeadTextFontSize: 75px;
+    --MainBodyTextSize: 45px;
+}
+
+/* Enabling Norwester font */
+@font-face {
+  font-family: Norwester;
+  src: url(fonts/norwester.otf);
+}
+
+
+p {
+    font-family: 'Norwester';
+    font-size: 100px;
+    text-align: center;
+}
+
+
+
 body {
-    background-color: rgb(218, 227, 235);
+    background-color: var(--backround_color_main);
+    
 }
 
 main {
     border: solid 2px purple;
     border-radius: 2vh;
     margin-top: 15vh;
-
+    font-size: large;
 }
 
 .groen {
@@ -73,10 +96,55 @@ a.button {
     text-decoration: none;
 }
 
-textarea {
-	resize: none;
+/*ENABLE FONT VOOR LOSSE TEKST*/
+.norwester_font {
+    font-family: 'Norwester';
 }
 
-#skill-select {
-    width: 200px;
+/*HOMEPAGE STYLING*/
+#home_headtext1 {
+    font-size: var(--HeadTextFontSize);
+}
+
+#home_mainbody1 {
+    font-size: var(--MainBodyTextSize);
+}
+
+
+
+/*SKILLPAGE STYLING*/
+#skill_headtext1 {
+    font-size: var(--HeadTextFontSize);
+    text-align: center;
+}
+
+#skill_mainbody1 {
+    font-size: var(--MainBodyTextSize);
+    text-align: center;
+}
+
+
+
+/*VRAAGMMAKENPAGE STYLING*/
+#vraag_headtext1 {
+    font-size: var(--HeadTextFontSize);
+    text-align: center;
+}
+
+#vraag_headtext2 {
+    font-size: 25px;
+}
+
+#select_style {
+    width: 175px;
+}
+
+#vraag_headtext3{
+    font-family: 'Norwester';
+    font-size:25px;
+}
+
+#poep {
+    width: 250px;
+    height: 100px;
 }

@@ -1,11 +1,11 @@
 <header>
     <nav class="backgroundblur">
-            <a id="logo" href="../Webpages/index.php"><img id="mainLogo" src="../Media/SpikEnSpanLogo.png" alt="Spik en Span logo"></a>
+            <a id="logo" href="../Webpages/index.php"><img id="mainLogo" src="../Media/SkillSphereLogo.png" alt="Spik en Span logo"></a>
         <div class="flex-container">
-            <a href="../Webpages/index.php" class="headerbutton">INDEX</a>
-            <a href="../Webpages/FAQ.php" class="headerbutton">FAQ</a>
-            <a href="../Webpages/gebruikers.php" class="headerbutton">Gebruikers data</a>
-            <a href="../Webpages/tickets.php" class="headerbutton">Tickets kopen</a>
+            <a href="../Webpages/index.php" class="headerbutton">HOME</a>
+            <a href="../Webpages/skills.php" class="headerbutton">SKILLS</a>
+            <a href="../Webpages/vraagmaken.php" class="headerbutton">ADD QUESTIONS</a>
+    
         </div>
 
         <div class="dropdown">

@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../CSS/style.css">
 </head>
 <body>
-    
+    <p id="home_headtext1">HOME</p>
+    <p id="home_mainbody1">Lorem Ipsum</p>
 </body>
 </html>
