@@ -48,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 <body>
     
-    <h2 style="left: 30px; margin-left: 80px;"> Skill toevoegen </h2>
+    <p id="skill_headtext1">Skill toevoegen</p>
 <div class ="form-container">
 <form method="POST" action="skills.php">
     <!-- SKILL FIELD: Insert new skills and descriptions here. -->
@@ -60,7 +60,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <div id="LeftContainer" style="display: flex; flex-direction: column; gap: 5px; width: 25%; height: 100%;">
             <input type="text" id="skill" name="skill" placeholder="Naam, max 50 tekens" required>
             <textarea type="text" id="description" name="description" placeholder="Beschrijving, max 60.000 tekens" style="width: 300px; height: 500px;" required></textarea>
-            <button type="submit" style="margin: 20px;" id="VerzendBtn">Verzenden</button>
+            <button type="submit" style="margin: 20px;" class="headerbutton">Verzenden</button>
             </div>
             <H1> Edit deze pagina </H1>
         <div id="MiddleContainer"  style="display: flex; flex-direction: column; gap: 5px; width: 18%; height: 100%;">

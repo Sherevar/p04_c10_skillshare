@@ -116,27 +116,38 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link rel="stylesheet" href="../CSS/header.css">
     <link rel="stylesheet" href="../CSS/style.css">
 </head>
+<!-- <style>
+    #select_style {
+        width: 150px;
+    }
+</style> -->
+
 <body>
     
 
     
-    <h2 style="left: 30px; margin-left: 80px;"> Vraag toevoegen </h2>
+
+<p id="vraag_headtext1"> Vraag toevoegen</p>
+
 <div class ="form-container">
 <form method="POST" action="vraagmaken.php">
     <!-- CHECK DIT NOG LATER -->
 
     <div id="MainContainer" style="display: flex; height: 500px; width: 100vw;">
         <div id="PaddingContainer" style="display: flex; flex-direction: justify-content: center; align-items: center; column; gap: 5px; width: 60px; height: 100%;"> </div>
-            <div id="LeftContainer" style="display: flex; flex-direction: column; gap: 5px; width: 25%; height: 100%;">
+            <div id="LeftContainer" style="display: flex; flex-direction: column;">
+
+    <p id="vraag_headtext2">Vul de vraag in:</p>
 
 
-            <textarea type="text" id="vraag" name="vraag" placeholder="Beschrijf de vraag" style="align-items: flex-start; width: 300px; height: 500px;" required></textarea>
+            <textarea type="text" id="poep" name="vraag" placeholder="Beschrijf de vraag" required></textarea>
            <br>
 
 
             <!--  Loop which gives a dropdown menu of already created skills. -->
-           <label for="skillSelect">Kies een skill:</label>
-    <select name="skills" id="skill-select">
+           <label for="skillSelect" id="vraag_headtext3">Kies een skill:</label>
+           
+    <select name="skills" id="select_style">
         <?php foreach ($skillArray as $skillCounter): ?>
             <option value="<?php echo $skillCounter['id']; ?>">
                 <?php echo $skillCounter['skill']; ?>
@@ -144,17 +155,33 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <?php endforeach; ?>
     </select>
 
-          <p>Welk antwoord is correct?</p>
-            <input type="radio" id="answer1" name="answer_true" value="answer1">
-            <label for="answer1">Antwoord 1</label>
-            <input type="radio" id="answer2" name="answer_true" value="answer2">
-            <label for="answer2">Antwoord 2</label>
-            <input type="radio" id="answer3" name="answer_true" value="answer3">
-            <label for="answer3">Antwoord 3</label>
-            <input type="radio" id="answer4" name="answer_true" value="answer4">
-            <label for="answer4">Antwoord 4</label>
+          <p id="vraag_headtext2">Welk antwoord is correct?</p>
+            <div>
+                <input type="radio" id="answer1" name="answer_true" value="answer1">
+                <label for="answer1" class="norwester_font">Antwoord 1</label>
+                <br>
+            </div>  
+            
+            <div>
+                <input type="radio" id="answer2" name="answer_true" value="answer2">
+                <label for="answer2" class="norwester_font">Antwoord 2</label>
+                <br>
+            </div>
+            
+            <div>
+                <input type="radio" id="answer3" name="answer_true" value="answer3">
+                <label for="answer3" class="norwester_font">Antwoord 3</label>
+                <br>
+            </div>
 
-            <button type="submit" style="margin: 20px;" id="VerzendBtn">Verzenden</button>
+            <div>
+                <input type="radio" id="answer4" name="answer_true" value="answer4">
+                <label for="answer4" class="norwester_font">Antwoord 4</label>
+                <br>
+            </div>
+            
+
+            <button type="submit" style="margin: 20px;" class="headerbutton">Verzenden</button>
             </div>
 
             <!-- Four answer containers. CSS styling can be ported over to style.css -->
