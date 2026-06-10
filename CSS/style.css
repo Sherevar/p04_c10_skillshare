@@ -136,6 +136,7 @@ a.button {
 
 #vraag_headtext2 {
     font-size: 25px;
+    text-align: left;
 }
 
 #select_style {
@@ -147,8 +148,42 @@ a.button {
     font-size:25px;
 }
 
-#poep {
+#textbox_vraag {
     width: 250px;
     height: 100px;
+    resize: none;
+    border-radius: 5px;
+    border-width: 2px;
+    border-color: black;
+    box-shadow: 10px 10px 9px 3px rgba(0, 0, 0, 0.35);
 }
 
+.antwoord_container {
+    width: 300px;
+    height: 200px;
+    resize: none;
+    border-radius: 5px;
+    border-width: 2px;
+    border-color: black;
+    box-shadow: 10px 10px 9px 3px rgba(0, 0, 0, 0.35);
+}
+
+#antwoordbox_alignment_left {
+    display: grid;
+    gap: 5px;
+    width: 350px;
+    height: 250px;
+    
+}
+
+#antwoordbox_alignment_right {
+    display: grid;
+    gap: 5px;
+    width: 350px;
+    height: 250px;
+    
+}
+
+#MainContainer {
+    align-items: center;
+}

@@ -140,7 +140,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <p id="vraag_headtext2">Vul de vraag in:</p>
 
 
-            <textarea type="text" id="poep" name="vraag" placeholder="Beschrijf de vraag" required></textarea>
+            <textarea type="text" id="textbox_vraag" name="vraag" placeholder="Beschrijf de vraag" required></textarea>
            <br>
 
 
@@ -184,15 +184,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <button type="submit" style="margin: 20px;" class="headerbutton">Verzenden</button>
             </div>
 
-            <!-- Four answer containers. CSS styling can be ported over to style.css -->
-        <div id="MiddleContainer"  style="display: flex; flex-direction: column; gap: 5px; width: 38%; height: 100%;">         
-                <textarea type="text" id="answer1" name="answer1" placeholder="Antwoord 1" style="width: 500px; height: 500px;" ></textarea>
-                <textarea type="text" id="answer2" name="answer2" placeholder="Antwoord 2" style="width: 500px; height: 500px;" ></textarea>
-
+            <!-- Four answer containers. -->
+        <div id="antwoordbox_alignment_left">         
+                <textarea type="text" class="antwoord_container" name="answer1" placeholder="Antwoord 1"></textarea>
+                <textarea type="text" class="antwoord_container" name="answer2" placeholder="Antwoord 2"></textarea>
         </div>
-        <div id="RightContainer" style="display: flex; flex-direction: column; gap: 5px; width: 38%; height: 100%;">
-                <textarea type="text" id="answer3" name="answer3" placeholder="Antwoord 3" style="width: 500px; height: 500px;" ></textarea>
-                <textarea type="text" id="answer4" name="answer4" placeholder="Antwoord 4" style="width: 500px; height: 500px;" ></textarea>
+        <div id="antwoordbox_alignment_right">
+                <textarea type="text" class="antwoord_container" name="answer3" placeholder="Antwoord 3"></textarea>
+                <textarea type="text" class="antwoord_container" name="answer4" placeholder="Antwoord 4"></textarea>
         </div>
         </div>
     </div>
