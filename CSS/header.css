@@ -139,5 +139,6 @@ header{
   background-color: var(--button_hover_color);
 }
 
-
-
+.text_logo {
+  font-size: 1000px;
+}
