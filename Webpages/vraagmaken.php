@@ -199,21 +199,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </div>
 
 <?php
+// Bug testing
 // echo $_POST['skills'];
 // echo '\n';
 // echo var_dump($_POST);
-echo "\n";
-echo "\n";
+// echo "\n";
+// echo "\n";
 // print_r ($skillArray);
-echo "\n";
-echo "\n";
+// echo "\n";
+// echo "\n";
 // echo $skill_id = intval($skillArray);
 // echo gettype($skill_id);
 
 
 ?>
 </body>
-
-<?php
-
-?>
