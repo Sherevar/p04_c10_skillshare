@@ -33,6 +33,7 @@ header{
 
 .flex-container {
     margin-right: 20%;
+    float: left;
     /* margin-left: 0%; */
 }
 
@@ -82,6 +83,7 @@ header{
     position: relative;
     float: left;
     scale: 90%;
+    top: 10px;
 }
 
 
@@ -95,17 +97,16 @@ header{
   cursor: pointer;
   border-radius: 3vh;
   text-decoration: none;
-
   font-family: "Norwester";
+  
 }
 
 .dropdown {
   position: relative;
   float: right;
   border-radius: 3vh;
-  top: -1vh;
   border: solid 3px;
-  right: 10px;
+  top: 20px;
 }
 
 .dropdown-content {
@@ -137,8 +138,4 @@ header{
 
 .dropdown:hover .dropbtn {
   background-color: var(--button_hover_color);
-}
-
-.text_logo {
-  font-size: 1000px;
 }
