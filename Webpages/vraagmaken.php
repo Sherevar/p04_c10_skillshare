@@ -147,6 +147,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <!--  Loop which gives a dropdown menu of already created skills. -->
            <label for="skillSelect" id="vraag_headtext3">Kies een skill:</label>
            
+
+
+
+
+
+
+
     <select name="skills" id="select_style">
         <?php foreach ($skillArray as $skillCounter): ?>
             <option value="<?php echo $skillCounter['id']; ?>">
@@ -155,6 +162,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <?php endforeach; ?>
     </select>
 
+
+
+
+
+
+
+    
           <p id="vraag_headtext2">Welk antwoord is correct?</p>
             <div>
                 <input type="radio" id="answer1" name="answer_true" value="answer1">

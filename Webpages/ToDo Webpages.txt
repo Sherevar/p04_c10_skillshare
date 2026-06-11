@@ -1,7 +1,15 @@
 vriendenlijst.php
 
-Loop om alle users te laten zien
     Mogelijk met een search functie?
         Zie pokedex
-Klik op een knop om een vriend toe te voegen (Kees kantine)
 Delete vriend (kees kantine)
+
+
+
+
+
+medailles.php
+table
+    columns: skills Loop
+    rows: user_id + friend_id Loop
+    get friend medal data SOMEHOW
