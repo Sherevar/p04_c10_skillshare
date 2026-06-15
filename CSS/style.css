@@ -194,3 +194,8 @@ a.button {
 #MainContainer {
     align-items: center;
 }
+
+.medalgrade {
+    max-width: 64px;
+    max-height: 64px;
+}
