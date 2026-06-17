@@ -14,7 +14,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     
     echo "<br><br>";
     if ($skill && $description) {
-        echo "test try catch.";
 // MAAK ECHO/MELDINGEN OVER WAT WORDT DOORGESTUURD!
     try {
         $sql = "
@@ -54,25 +53,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <!-- SKILL FIELD: Insert new skills and descriptions here. -->
 <!-- Could use an already existing skill list or be able to edit certain items (new page?) -->
 
+                
+<div id="textcard_styling_skills">
+    <!--NAAMBOX-->
+    <h2 style="font-family: 'norwester'">NAAM SKILL</h2>        
+    <input type="text" id="skill_input" name="skill" placeholder="Naam, max 50 tekens" required>
 
-    <div id="MainContainer" style="display: flex; height: 500px; width: 100vw;">
-        <div id="PaddingContainer" style="display: flex; flex-direction: justify-content: center; align-items: center; column; gap: 5px; width: 60px; height: 100%;"> </div>
-            <div id="LeftContainer" style="display: flex; flex-direction: column; gap: 5px; width: 25%; height: 100%;">
-            <input type="text" id="skill" name="skill" placeholder="Naam, max 50 tekens" required>
-            <textarea type="text" id="description" name="description" placeholder="Beschrijving, max 60.000 tekens" style="width: 300px; height: 500px;" required></textarea>
-            <button type="submit" style="margin: 20px;" class="headerbutton">Verzenden</button>
-            </div>
-            <H1> Edit deze pagina </H1>
-        <div id="MiddleContainer"  style="display: flex; flex-direction: column; gap: 5px; width: 18%; height: 100%;">
-                <h2> Lijst van bestaande skills hieronder </h2>
-                <h3> Lijst met edit mogelijkheid? </h3>
-        </div>
-        <div id="RightContainer" style="display: flex; flex-direction: column: gap: 5px; width: 50%; height: 100%;">
-
-        </div>
-        </div>
-    </div>
+    <!--TEXTAREA-->
+    <h2 style="font-family: 'norwester'">BESCHRIJVING</h2>
+    <textarea type="text" id="description_skillpage" name="description" placeholder="Beschrijving, max 60.000 tekens" required></textarea>
+    
+    <!--VERZENDKNOP-->
+    <br>
+    <button type="submit" style="margin: 20px;" class="headerbutton">Verzenden</button>
 </div>
+
 
 
 

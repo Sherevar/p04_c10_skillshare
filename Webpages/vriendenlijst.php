@@ -60,22 +60,22 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 </head>
 <body>
 
-<h3>Vriend toevoegen</h3>
+<h3 id="home_headtext1">Vriend toevoegen</h3>
 <?php if ($melding): ?>
     <p class="notification"><?php echo htmlspecialchars($melding); ?></p>
 <?php endif; ?>
-
-<form method="POST" action="vriendenlijst.php">
-    <label for="friend_id">Selecteer een gebruiker:</label>
-    <select name="friend_id" id="friend_id">
-        <?php foreach ($userlist as $user): ?>
-            <option value="<?php echo $user['id']; ?>">
-                <?php echo htmlspecialchars($user['username']); ?>
-            </option>
-        <?php endforeach; ?>
-    </select>
-    <button type="submit" class="headerbutton" style="margin: 20px;">Vriend toevoegen</button>
-</form>
+<div class="textcard_styling">
+    <form method="POST" action="vriendenlijst.php">
+        <label for="friend_id">Selecteer een gebruiker:</label>
+        <select name="friend_id" id="friend_id">
+            <?php foreach ($userlist as $user): ?>
+                <option value="<?php echo $user['id']; ?>">
+                    <?php echo htmlspecialchars($user['username']); ?>
+                </option>
+            <?php endforeach; ?>
+        </select>
+        <button type="submit" class="headerbutton" style="margin: 20px;">Vriend toevoegen</button>
+    </form>
 
 
 
@@ -89,6 +89,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <li>Geen vrienden gevonden.</li>
     <?php endif; ?>
 </ul>
-
+</div>
 </body>
 </html>

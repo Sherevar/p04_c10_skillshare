@@ -13,9 +13,9 @@
         <div class="dropdown">
             <button class="dropbtn">Gebruikers</button>
             <div class="dropdown-content">
-                <a href="../Webpages/registratie.php">Registratie</a>
-                <a href="../Webpages/inloggen.php">Inloggen</a>
-                <a href="../Webpages/logout.php">Uitloggen</a>
+                <a href="../Webpages/registratie.php" style='font-family:"Norwester";'>Registratie</a>
+                <a href="../Webpages/inloggen.php" style='font-family:"Norwester";'>Inloggen</a>
+                <a href="../Webpages/logout.php" style='font-family:"Norwester";'>Uitloggen</a>
             </div>
         </div>
     </nav>

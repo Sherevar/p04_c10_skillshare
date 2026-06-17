@@ -16,7 +16,7 @@ $stmt3 = $pdo->prepare("SELECT id, user_id, skill_id, points_earned,
         WHEN (points_earned >= 90) THEN 'gold'
         WHEN (points_earned >= 70) THEN 'silver'
         WHEN (points_earned >= 50) THEN 'bronze'
-        ELSE NULL
+        ELSE 'blank'
     END AS Medailles
 
  FROM tb_user_skills");
@@ -40,18 +40,19 @@ $medallist = $stmt3->fetchAll(PDO::FETCH_ASSOC);
     <link rel="stylesheet" href="../CSS/header.css">   
 </head>
 <body>
-<table border="1">
+<p id="home_headtext1">MEDAILLES</p>
+<table border="1" id="table_positioning">
     <tr>
-        <th>Gebruikers</th>
+        <th class="th_style">Gebruikers</th>
             <?php foreach ($data as $column)
-                {?> <th> <?php echo $column['skill']; ?>
+                {?> <th class="th_style"> <?php echo $column['skill']; ?>
             <?php } ?>
         </th>
     </tr>
 <?php foreach($userlist as $row) {?>
-    <tr><td><?php echo $row['username']; ?></td>
+    <tr><td class="td_style"><?php echo $row['username']; ?></td>
     <?php for ($i = 0; $i < count($data); $i++) { ?>
-        <td>
+        <td class="td_style">
         <?php foreach($medallist as $medal) {
             if ($medal["user_id"] == $row["id"] && $medal["skill_id"] == $data[$i]["id"]) {?>
                 <img class="medalgrade" src="../Media/Medals/<?php echo $medal["Medailles"]?>.png">  

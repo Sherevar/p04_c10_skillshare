@@ -107,6 +107,7 @@ header{
   border-radius: 3vh;
   border: solid 3px;
   top: 20px;
+  right: 15px;
 }
 
 .dropdown-content {
@@ -125,6 +126,7 @@ header{
   padding: 12px 16px;
   text-decoration: none;
   display: block;
+  font-family: "Norwester";
 }
 
 .dropdown-content a:hover {
@@ -138,4 +140,20 @@ header{
 
 .dropdown:hover .dropbtn {
   background-color: var(--button_hover_color);
+}
+
+#login_btn{ 
+  text-decoration: none;
+  color:#000;
+  font-family: 'Norwester';
+  border: solid 3px;
+}
+
+#startpage_btn { 
+  text-decoration: none;
+  color:#000;
+  font-family: 'Norwester';
+  border: solid 3px;
+  position: relative;
+  left: 900px;
 }

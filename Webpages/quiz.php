@@ -37,14 +37,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>quiz</title>
+    <link rel="stylesheet" href="../CSS/header.css">
+    <link rel="stylesheet" href="../CSS/style.css">
 </head>
 <body>
 
-
+<h3 id="home_headtext1">QUIZ</h3>
 <form method="post" action="quiz.php">
 <?php foreach ($question_list as $i => $q): ?>
   <div class="question">
-    <p><?php echo htmlspecialchars($q['question']); ?></p>
+    <h2><?php echo htmlspecialchars($q['question']); ?></h2>
 
     <?php for ($a = 1; $a <= 4; $a++):
       $ansKey = "answer{$a}";
@@ -57,7 +59,7 @@
   </div>
 <?php endforeach; ?>
 
-<input type="submit" value="Submit">
+<input type="submit" value="Submit" id="submit_btn_quiz">
 </form>
 
 <?php

@@ -69,29 +69,32 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 </head>
 <body>
   <div class="card">
-    <h1>Login</h1>
+    <h3 id="home_headtext1">LOGIN</h3>
+<div id="login_card_styling">
+        <form method="POST" action="inloggen.php">
+        <label for="email">Gebruikersnaam</label>
+        <br>
+        <input id="email" name="username" type="text" placeholder="bijv. admin" required>
+        <br>
+        <br>
+        <label for="password">Wachtwoord</label>
+        <br>
+        <input id="password" name="user_password" type="password" placeholder="bijv. admin" required>
+        <br>
+        <br>
+        <button type="submit" class="headerbutton">Inloggen</button>
+        </form>
 
-    <form method="POST" action="inloggen.php">
-      <label for="email">Gebruikersnaam</label>
-      <input id="email" name="username" type="text" placeholder="bijv. admin" required>
-
-      <label for="password">Wachtwoord</label>
-      <input id="password" name="user_password" type="password" placeholder="bijv. admin" required>
-
-      <button type="submit">Inloggen</button>
+        <form action="registratie.php"> <!-- Needs a link to a new user form, linked to database -->
+        <br>
+        <input type="submit" value="Registreer als nieuwe gebruiker" id="login_btn"/>
     </form>
-
-    <form action="registratie.php"> <!-- Needs a link to a new user form, linked to database -->
-      <br>
-    <input type="submit" value="Registreer als nieuwe gebruiker" />
-</form>
-
+</div>
 
     <?php if ($error): ?>
       <div class="msg"><?= htmlspecialchars($error) ?></div>
     <?php endif; ?>
   </div>
-<button type="submit" onClick="refreshPage()">Refresh Button</button>
 <script>
     function refreshPage(){
     window.location.reload();

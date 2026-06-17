@@ -1,6 +1,8 @@
 /* variables */
 :root {
     --backround_color_main: #5170ff;
+    --backround_color_table: #9f9f9f;
+    --color_txt_table: rgb(0, 0, 0);
     --HeadTextFontSize: 75px;
     --MainBodyTextSize: 45px;
 }
@@ -35,7 +37,7 @@ body {
 }
 
 main {
-    border: solid 2px purple;
+    border: solid 2px rgb(0, 0, 0);
     border-radius: 2vh;
     margin-top: 15vh;
     font-size: large;
@@ -43,15 +45,15 @@ main {
 }
 
 .groen {
-    color: rgba(39, 83, 74);
+    color: rgba(0, 0, 0);
 }
 
 .paars {
-    color: purple;
+    color: rgb(0, 0, 0);
 }
 
 .donkergroen {
-    color: rgba(23, 49, 44);
+    color: rgb(0, 0, 0);
 }
 
 .roze {
@@ -114,6 +116,8 @@ a.button {
 /*HOMEPAGE STYLING*/
 #home_headtext1 {
     font-size: var(--HeadTextFontSize);
+    font-family: 'Norwester';
+    text-align: center;
 }
 
 #home_mainbody1 {
@@ -131,6 +135,20 @@ a.button {
 #skill_mainbody1 {
     font-size: var(--MainBodyTextSize);
     text-align: center;
+}
+
+#skill_input {
+    align-items: center;
+    
+    
+}
+
+#description_skillpage {
+    align-items: center;
+    resize: none;
+    width: 100%;
+    height: 30%;
+    padding:10px;
 }
 
 
@@ -192,10 +210,119 @@ a.button {
 }
 
 #MainContainer {
-    align-items: center;
+    position: relative;
+    margin-left: 24%;
+    margin-right: 24%;
 }
 
 .medalgrade {
     max-width: 64px;
     max-height: 64px;
+}
+
+.textcard_styling {
+    margin-left: 24%;
+    margin-right: 24%;
+    font-family: 'norwester';
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 23px;
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    
+}
+
+#textcard_styling_skills {
+    margin-left: 24%;
+    margin-right: 24%;
+    font-family: 'norwester';
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 23px;
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    align-items: center;
+
+}
+
+.question {
+    margin-left: 24%;
+    margin-right: 24%;
+    font-family: 'norwester';
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 23px;
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    margin-bottom: 50px;
+    margin-top: 100px;
+}
+
+#submit_btn_quiz {
+    text-decoration: none;
+    color:#000;
+    font-family: 'Norwester';
+    border: solid 3px;
+    border-radius: 5px;
+    position: relative;
+    align-items: center;
+    margin-left: 47.5%;
+    width: 100px;
+    height: 50px
+}
+
+/*MEDALS.PHP STYLING*/
+#table_positioning {
+    margin-top: 50px;
+    position: relative;
+    margin-left: 32.5%;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    padding: 5px;
+}
+
+.th_style {
+    font-family: 'Norwester';
+    color: rgb(0, 0, 0);
+    background-color: #005bd3;
+    border-color: #000;
+    border: 3px solid #000000;
+    border-radius: 5px;
+}
+
+.td_style {
+    font-family: 'Norwester';
+    width: 64px;
+    height: 64px;
+    color: var(--color_txt_table);
+    background-color: var(--backround_color_main);
+    border-color: #000;
+    border: 3px solid #000000;
+    border-radius: 5px;
+}
+
+td:nth-child(even){background-color: #d2d0d0;}
+
+#login_card_styling {
+    margin-left: 30%;
+    margin-right: 35%;
+    width: auto;
+    font-family: 'Norwester';
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 23px;
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    left: 50px;
+    position: relative;
+
+}
+
+#form_positiong {
+    position: relative;
+    text-align: center;
+    width: 150px;
+    margin-left: 15%;
+    margin-right: 15%;
 }
