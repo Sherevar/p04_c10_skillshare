@@ -6,6 +6,8 @@
             <a href="../Webpages/vraagmaken.php" class="headerbutton">VRAAGMAKEN</a>
             <a href="../Webpages/skills.php" class="headerbutton">USERSKILLS</a>
             <a href="../Webpages/vriendenlijst.php" class="headerbutton">VRIENDENLIJST</a>
+            <a href="../Webpages/quiz.php" class="headerbutton">QUIZ</a>
+            <a href="../Webpages/medals.php" class="headerbutton">MEDAILLES</a>
         </div>
 
         <div class="dropdown">
